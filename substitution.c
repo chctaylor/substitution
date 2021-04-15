@@ -1,5 +1,3 @@
-//this is just a place holder
-
 #include <ctype.h>
 #include <cs50.h>
 #include <math.h>
@@ -30,35 +28,28 @@ int main(int argc, string argv[])
                 return 1;
             }
         }
-        //Testing how to find duplicate letters BUT ITS NOT WORKING
-        
-        string input = argv[1];
-        
-        printf("%s\n", input);
-        char argument_input[] = "input";
-        int duplicate_counter;
+        //Testing how to find duplicate letters BUT ITS NOT WORKING... maybe write a formula converting letters to upper case
+        //adding all together A through Z and if the number is not == to user input it means a letter was duplicated
+
+        string argument_input = argv[1];
+
+        printf("%s\n", argument_input);
+        int duplicate_counter = 0;
 
         printf("Duplicate characters: \n");
 
-        for(int i = 0; i < strlen(argument_input); i++)
+        for (int i = 0; i < strlen(argument_input); i++)
         {
-            duplicate_counter = 1;
 
             for (int j = i + 1; j < strlen(argument_input); j++)
             {
-                if(argument_input[i] == argument_input[j] && argument_input[i] != '0')
+                if(argument_input[i] == argument_input[j])
                 {
                     duplicate_counter++;
-                    argument_input[j] = '0';
+                    printf("%c\n",argument_input[i]);
                 }
             }
-
-            //Duplicated letters if the duplicate counter greater than 1
-
-            if(duplicate_counter > 1 && argument_input[i] != '0')
-            {
-                printf("%c\n", argument_input[i]);
-            }
         }
+        printf("%i\n",duplicate_counter);
     }
 }
