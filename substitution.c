@@ -19,7 +19,7 @@ int main(int argc, string argv[])
     {
         for (int array_counter = 0, argument = strlen(argv[1]); array_counter < argument; array_counter++)
         {
-            if (isdigit(argv[1][array_counter]))
+            if (!isalpha(argv[1][array_counter]))
             {
                 printf("Key must only contain alphabetic characters\n");
                 return 1;
